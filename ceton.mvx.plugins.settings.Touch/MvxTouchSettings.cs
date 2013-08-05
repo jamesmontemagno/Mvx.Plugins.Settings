@@ -21,7 +21,8 @@
 
 using System;
 using System.Collections.Generic;
-using Cirrious.MvvmCross.Plugins.File.Touch;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Plugins.File;
 using Newtonsoft.Json;
 
 namespace ceton.mvx.plugins.settings.Touch
@@ -29,10 +30,15 @@ namespace ceton.mvx.plugins.settings.Touch
     public class MvxTouchSettings : ISettings
     {
         private Dictionary<string, object> m_Settings = new Dictionary<string, object>();
-        MvxTouchFileStore m_FileStore = new MvxTouchFileStore();
+        readonly IMvxFileStore m_FileStore;
 
         private const string SettingsFile = "app_settings";
-        private object m_Locker = new object();
+        private readonly object m_Locker = new object();
+
+        public MvxTouchSettings()
+        {
+            m_FileStore = Mvx.Resolve<IMvxFileStore>();
+        }
 
         
         public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
@@ -128,6 +134,8 @@ namespace ceton.mvx.plugins.settings.Touch
             }
             catch (Exception)
             {
+                m_Settings = defaultValues;
+                Save();
             }
         }
     }

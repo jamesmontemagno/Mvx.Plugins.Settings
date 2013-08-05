@@ -122,7 +122,7 @@
       <Project>{ec4d7e89-74d3-4d15-85fe-5ec0cb647964}</Project>
       <Name>ceton.mvx.plugins.settings.test.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ceton.mvx.plugins\ceton.mvx.plugins.settings.csproj">
+    <ProjectReference Include="..\ceton.mvx.plugins.settings\ceton.mvx.plugins.settings.csproj">
       <Project>{747706f4-ecbf-4d50-8d72-b0ddcc18395c}</Project>
       <Name>ceton.mvx.plugins.settings</Name>
     </ProjectReference>

@@ -82,7 +82,7 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ceton.mvx.plugins\ceton.mvx.plugins.settings.csproj">
+    <ProjectReference Include="..\ceton.mvx.plugins.settings\ceton.mvx.plugins.settings.csproj">
       <Project>{747706f4-ecbf-4d50-8d72-b0ddcc18395c}</Project>
       <Name>ceton.mvx.plugins.settings</Name>
     </ProjectReference>

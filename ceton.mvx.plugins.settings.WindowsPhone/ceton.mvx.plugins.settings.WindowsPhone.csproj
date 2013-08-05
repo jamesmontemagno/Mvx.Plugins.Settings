@@ -65,7 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ceton.mvx.plugins\ceton.mvx.plugins.settings.csproj">
+    <ProjectReference Include="..\ceton.mvx.plugins.settings\ceton.mvx.plugins.settings.csproj">
       <Project>{747706F4-ECBF-4D50-8D72-B0DDCC18395C}</Project>
       <Name>ceton.mvx.plugins.settings</Name>
     </ProjectReference>

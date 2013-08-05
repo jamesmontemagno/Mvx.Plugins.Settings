@@ -40,7 +40,13 @@ namespace ceton.mvx.plugins.settings.Touch
             m_FileStore = Mvx.Resolve<IMvxFileStore>();
         }
 
-        
+        /// <summary>
+        /// Gets the current value or the default that you specify.
+        /// </summary>
+        /// <typeparam name="T">Vaue of t (bool, int, float, long, string)</typeparam>
+        /// <param name="key">Key for settings</param>
+        /// <param name="defaultValue">default value if not set</param>
+        /// <returns>Value or default</returns>
         public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
         {
             lock (m_Locker)
@@ -79,6 +85,12 @@ namespace ceton.mvx.plugins.settings.Touch
             }
         }
 
+        /// <summary>
+        /// Adds or updates the value 
+        /// </summary>
+        /// <param name="key">Key for settting</param>
+        /// <param name="value">Value to set</param>
+        /// <returns>True of was added or updated and you need to save it.</returns>
         public bool AddOrUpdateValue(string key, object value)
         {
             lock (m_Locker)
@@ -101,6 +113,9 @@ namespace ceton.mvx.plugins.settings.Touch
             return false;
         }
 
+        /// <summary>
+        /// Saves all currents settings outs.
+        /// </summary>
         public void Save()
         {
             try
@@ -112,8 +127,29 @@ namespace ceton.mvx.plugins.settings.Touch
             }
             catch (Exception)
             {
-
+                //TODO: log stuff here
             }
+        }
+
+        /// <summary>
+        /// Resets the save file by deleting and resaving current settings.
+        /// </summary>
+        private void Reset()
+        {
+            lock (m_Locker)
+            {
+                try
+                {
+                    m_FileStore.DeleteFile(SettingsFile);
+                }
+                catch (Exception)
+                {
+                    //TODO: log stuff here
+                }
+
+                Save();//attempt to resave items.
+            }
+
         }
 
 
@@ -135,7 +171,7 @@ namespace ceton.mvx.plugins.settings.Touch
             catch (Exception)
             {
                 m_Settings = defaultValues;
-                Save();
+                Reset();
             }
         }
     }

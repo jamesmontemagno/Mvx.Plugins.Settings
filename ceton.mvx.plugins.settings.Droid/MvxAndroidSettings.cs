@@ -39,6 +39,13 @@ namespace ceton.mvx.plugins.settings.Droid
 
         }
 
+        /// <summary>
+        /// Gets the current value or the default that you specify.
+        /// </summary>
+        /// <typeparam name="T">Vaue of t (bool, int, float, long, string)</typeparam>
+        /// <param name="key">Key for settings</param>
+        /// <param name="defaultValue">default value if not set</param>
+        /// <returns>Value or default</returns>
         public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
         {
             lock (m_Locker)
@@ -73,6 +80,12 @@ namespace ceton.mvx.plugins.settings.Droid
             }
         }
 
+        /// <summary>
+        /// Adds or updates a value
+        /// </summary>
+        /// <param name="key">key to update</param>
+        /// <param name="value">value to set</param>
+        /// <returns>True if added or update and you need to save</returns>
         public bool AddOrUpdateValue(string key, object value)
         {
             lock (m_Locker)
@@ -106,6 +119,9 @@ namespace ceton.mvx.plugins.settings.Droid
             return true;
         }
 
+        /// <summary>
+        /// Saves out all current settings
+        /// </summary>
         public void Save()
         {
             lock (m_Locker)

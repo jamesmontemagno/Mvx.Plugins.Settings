@@ -6,6 +6,9 @@ namespace ceton.mvx.plugins.settings.test.Core.ViewModels
 		: MvxViewModel
     {
         private string _hello = string.Empty;
+        /// <summary>
+        /// This is a quick test to output last value and then set default.
+        /// </summary>
         public string Hello
 		{ 
 			get
@@ -19,6 +22,10 @@ namespace ceton.mvx.plugins.settings.test.Core.ViewModels
 		}
 
         private string _hello2 = string.Empty;
+        /// <summary>
+        /// This is a quick test to output the default and then output a new one.
+        /// See iOS example.
+        /// </summary>
         public string Hello3
         {
             get

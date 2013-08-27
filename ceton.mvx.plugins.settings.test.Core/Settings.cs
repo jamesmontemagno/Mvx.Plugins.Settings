@@ -14,33 +14,12 @@ namespace ceton.mvx.plugins.settings.test.Core
         /// Simply setup your settings once when it is initialized.
         /// </summary>
         private static ISettings m_Settings;
-        private static bool m_Setup;
         private static ISettings AppSettings
         {
             get
             {
-               if (m_Settings == null && !m_Setup)
-               {
-                   Setup();
-                   m_Setup = true;
-               }
-
-                return m_Settings;
+                return m_Settings ?? (m_Settings = m_Settings = Mvx.GetSingleton<ISettings>());
             }
-        }
-
-        /// <summary>
-        /// Setup required for IOS only, put all keys and defaults here.
-        /// All other platforms do not use this, but in theory what you are doing here is laying out your 
-        /// JSON file.
-        /// </summary>
-        private static void Setup()
-        {
-            m_Settings = Mvx.GetSingleton<ISettings>();
-            m_Settings.Setup(new Dictionary<string, object>
-                {
-                    {TimeoutKey, TimeoutDefault},
-                });
         }
 
 #region Setting Constants

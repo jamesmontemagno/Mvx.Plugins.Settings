@@ -20,25 +20,15 @@
  */
 
 using System;
-using System.Collections.Generic;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Plugins.File;
-using Newtonsoft.Json;
+using MonoTouch.Foundation;
+
 
 namespace ceton.mvx.plugins.settings.Touch
 {
     public class MvxTouchSettings : ISettings
     {
-        private Dictionary<string, object> m_Settings = new Dictionary<string, object>();
-        readonly IMvxFileStore m_FileStore;
 
-        private const string SettingsFile = "app_settings";
         private readonly object m_Locker = new object();
-
-        public MvxTouchSettings()
-        {
-            m_FileStore = Mvx.Resolve<IMvxFileStore>();
-        }
 
         /// <summary>
         /// Gets the current value or the default that you specify.
@@ -51,9 +41,6 @@ namespace ceton.mvx.plugins.settings.Touch
         {
             lock (m_Locker)
             {
-                if (!m_Settings.ContainsKey(key))
-                    return defaultValue;
-
                 Type typeOf = typeof (T);
                 if (typeOf.IsGenericType && typeOf.GetGenericTypeDefinition() == typeof (Nullable<>))
                 {
@@ -61,22 +48,24 @@ namespace ceton.mvx.plugins.settings.Touch
                 }
                 object value = null;
                 var typeCode = Type.GetTypeCode(typeOf);
+                var defaults = NSUserDefaults.StandardUserDefaults;
                 switch (typeCode)
                 {
                     case TypeCode.Boolean:
-                        value = Convert.ToBoolean(m_Settings[key]);
+                        value = defaults.BoolForKey(key);
                         break;
                     case TypeCode.Int64:
-                        value = Convert.ToInt64(m_Settings[key]);
+                    case TypeCode.Double:
+                        value = defaults.DoubleForKey(key);
                         break;
                     case TypeCode.String:
-                        value = Convert.ToString(m_Settings[key]);
+                        value = defaults.StringForKey(key);
                         break;
                     case TypeCode.Int32:
-                        value = Convert.ToInt32(m_Settings[key]);
+                        value = defaults.IntForKey(key);
                         break;
                     case TypeCode.Single:
-                        value = Convert.ToSingle(m_Settings[key]);
+                        value = defaults.FloatForKey(key);
                         break;
                 }
           
@@ -95,18 +84,31 @@ namespace ceton.mvx.plugins.settings.Touch
         {
             lock (m_Locker)
             {
-
-                if (!m_Settings.ContainsKey(key))
+                Type typeOf = value.GetType();
+                if (typeOf.IsGenericType && typeOf.GetGenericTypeDefinition() == typeof(Nullable<>))
                 {
-                    m_Settings.Add(key, value);
-                    return true;
+                    typeOf = Nullable.GetUnderlyingType(typeOf);
                 }
-
-                var currentValue = m_Settings[key];
-                if (currentValue != value)
+                var typeCode = Type.GetTypeCode(typeOf);
+                var defaults = NSUserDefaults.StandardUserDefaults;
+                switch (typeCode)
                 {
-                    m_Settings[key] = value;
-                    return true;
+                    case TypeCode.Boolean:
+                        defaults.SetBool(Convert.ToBoolean(value), key);
+                        break;
+                    case TypeCode.Int64:
+                    case TypeCode.Double:
+                        defaults.SetDouble(Convert.ToDouble(value), key);
+                        break;
+                    case TypeCode.String:
+                        defaults.SetString(Convert.ToString(value), key);
+                        break;
+                    case TypeCode.Int32:
+                        defaults.SetInt(Convert.ToInt32(value), key);
+                        break;
+                    case TypeCode.Single:
+                        defaults.SetFloat(Convert.ToSingle(value), key);
+                        break;
                 }
             }
 
@@ -122,7 +124,8 @@ namespace ceton.mvx.plugins.settings.Touch
             {
                 lock (m_Locker)
                 {
-                    m_FileStore.WriteFile(SettingsFile, JsonConvert.SerializeObject(m_Settings, Formatting.Indented));
+                    var defaults = NSUserDefaults.StandardUserDefaults;
+                    defaults.Synchronize();
                 }
             }
             catch (Exception)
@@ -131,49 +134,6 @@ namespace ceton.mvx.plugins.settings.Touch
             }
         }
 
-        /// <summary>
-        /// Resets the save file by deleting and resaving current settings.
-        /// </summary>
-        private void Reset()
-        {
-            lock (m_Locker)
-            {
-                try
-                {
-                    m_FileStore.DeleteFile(SettingsFile);
-                }
-                catch (Exception)
-                {
-                    //TODO: log stuff here
-                }
-
-                Save();//attempt to resave items.
-            }
-
-        }
-
-
-        public void Setup(Dictionary<string, object> defaultValues)
-        {
-            try
-            {
-                string content;
-                if (m_FileStore.Exists(SettingsFile) && m_FileStore.TryReadTextFile(SettingsFile, out content))
-                {
-                    m_Settings = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
-                }
-                else
-                {
-                    m_Settings = defaultValues;
-                    Save();
-                }
-            }
-            catch (Exception)
-            {
-                m_Settings = defaultValues;
-                Reset();
-            }
-        }
     }
 
 }

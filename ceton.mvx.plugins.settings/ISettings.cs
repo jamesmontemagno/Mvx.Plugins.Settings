@@ -47,11 +47,5 @@ namespace ceton.mvx.plugins.settings
         /// Saves any changes out.
         /// </summary>
         void Save();
-
-        /// <summary>
-        /// Setsup the settings dictionary to use.
-        /// </summary>
-        /// <param name="defaultValues">keys and default values to use.</param>
-        void Setup(Dictionary<string, object> defaultValues);
     }
 }

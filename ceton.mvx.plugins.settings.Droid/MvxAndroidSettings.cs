@@ -130,8 +130,5 @@ namespace ceton.mvx.plugins.settings.Droid
             }
         }
 
-        public void Setup(System.Collections.Generic.Dictionary<string, object> defaultValues)
-        {
-        }
     }
 }

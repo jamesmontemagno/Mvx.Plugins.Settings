@@ -103,13 +103,5 @@ namespace ceton.mvx.plugins.settings.WindowsStore
             //nothing to do it is automatic
         }
 
-        /// <summary>
-        /// Setsup the settings dictionary to use.
-        /// </summary>
-        /// <param name="defaultValues">keys and default values to use.</param>
-        public void Setup(System.Collections.Generic.Dictionary<string, object> defaultValues)
-        {
-        }
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿/*
  * MvxSettings:
- * Copyright (C) 2013 Ceton Corp: 
+ * Copyright (C) 2013 Refractored: 
  * 
  * Contributors:
  * http://github.com/JamesMontemagno
@@ -22,7 +22,7 @@
 using System;
 using Windows.Storage;
 
-namespace ceton.mvx.plugins.settings.WindowsStore
+namespace Refractored.MvxPlugins.Settings.WindowsStore
 {
     public class MvxWindowsStoreSettings : ISettings
     {
@@ -40,7 +40,7 @@ namespace ceton.mvx.plugins.settings.WindowsStore
         /// <param name="key">Key for settings</param>
         /// <param name="defaultValue">default value if not set</param>
         /// <returns>Value or default</returns>
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : class
         {
             T value;
             lock (m_Locker)

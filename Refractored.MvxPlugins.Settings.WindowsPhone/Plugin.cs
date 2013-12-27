@@ -21,7 +21,7 @@
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
-namespace ceton.mvx.plugins.settings.WindowsPhone
+namespace Refractored.MvxPlugins.Settings.WindowsPhone
 {
     public class Plugin : IMvxPlugin
     {

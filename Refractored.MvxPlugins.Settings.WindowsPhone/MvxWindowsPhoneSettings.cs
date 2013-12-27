@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO.IsolatedStorage;
 
-namespace ceton.mvx.plugins.settings.WindowsPhone
+namespace Refractored.MvxPlugins.Settings.WindowsPhone
 {
     public class MvxWindowsPhoneSettings : ISettings
     {
@@ -15,7 +15,7 @@ namespace ceton.mvx.plugins.settings.WindowsPhone
         /// <param name="key">Key for settings</param>
         /// <param name="defaultValue">default value if not set</param>
         /// <returns>Value or default</returns>
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : class
         {
             T value;
             lock (m_Locker)

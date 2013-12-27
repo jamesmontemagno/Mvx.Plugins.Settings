@@ -1,6 +1,6 @@
 ﻿/*
  * MvxSettings:
- * Copyright (C) 2013 Ceton Corp: 
+ * Copyright (C) 2013 Refractored: 
  * 
  * Contributors:
  * http://github.com/JamesMontemagno
@@ -21,7 +21,7 @@
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
-namespace ceton.mvx.plugins.settings.WindowsStore
+namespace Refractored.MvxPlugins.Settings.WindowsStore
 {
     public class Plugin : IMvxPlugin
     {

@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ceton.mvx.plugins.settings.Droid/MvxAndroidSettings.cs">
+    <Files>
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/3.2.5/lib/mono/4.0/Microsoft.Common.targets" Line="1" Column="1" />
+      <File FileName="ceton.mvx.plugins.settings.Droid/MvxAndroidSettings.cs" Line="52" Column="28" />
+      <File FileName="ceton.mvx.plugins.settings.Touch/MvxTouchSettings.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

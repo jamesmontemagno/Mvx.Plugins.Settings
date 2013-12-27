@@ -4,9 +4,9 @@ Mvx Settings Plugin an MvvmCross
 ## What is it
 Cross platform settings plug-in for MvvmCross that allows you to store and use shared preferences in your core project.
 
-Uses the native settings management (except iOS)
+Uses the native settings management
 * Android: SharedPreferences
-* iOS: JSON File
+* iOS: NSUserDefaults
 * Windows Phone: IsolatedStorageSettings
 * Windows Store: ApplicationDataContainer
 
@@ -38,6 +38,7 @@ Uses the native settings management (except iOS)
 
 ## Contributors
 * [jamesmontemagno](https://github.com/jamesmontemagno)
+* Originally a [ceton](https://github.com/ceton) project that has been transfered to me.
 
 Thanks!
 

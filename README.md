@@ -14,8 +14,8 @@ Uses the native settings management
 * Included currently is a iOS Touch sample app and a core solution under the "Test" folder.
 
 #Setup & Usage
-* Add ceton.mvx.plugins.settings.dll to all projects
-* Add ceton.mvx.plugins.settings.ClientName.dll to all clients 
+* Add Refractored.MvxPlugins.Settings.dll to all projects
+* Add Refractored.MvxPlugins.Settings.ClientName.dll to all clients 
 * Or go ahead and just all all projects in and reference them
 
 * Create a new file in your Core solution called Settings.cs (or whatever you would like)

@@ -40,7 +40,7 @@ namespace Refractored.MvxPlugins.Settings.WindowsStore
         /// <param name="key">Key for settings</param>
         /// <param name="defaultValue">default value if not set</param>
         /// <returns>Value or default</returns>
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : class
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
         {
             T value;
             lock (m_Locker)

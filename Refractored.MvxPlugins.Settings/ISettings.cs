@@ -33,7 +33,7 @@ namespace Refractored.MvxPlugins.Settings
         /// <param name="key">Key for settings</param>
         /// <param name="defaultValue">default value if not set</param>
         /// <returns>Value or default</returns>
-		T GetValueOrDefault<T>(string key, T defaultValue  = default(T)) where T : class;
+		T GetValueOrDefault<T>(string key, T defaultValue  = default(T));
 
         /// <summary>
         /// Adds or updates the value 

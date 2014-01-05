@@ -74,6 +74,13 @@ namespace Refractored.MvxPlugins.Settings.Droid
                     case TypeCode.Single:
                         value = SharedPreferences.GetFloat(key, Convert.ToSingle(defaultValue));
                         break;
+                    case TypeCode.DateTime:
+                        var ticks = SharedPreferences.GetLong(key, -1);
+                        if (ticks == -1)
+                            value = defaultValue;
+                        else
+                            value = new DateTime(ticks);
+                        break;
                 }
 
                 return null != value ? (T) value : defaultValue;
@@ -112,6 +119,9 @@ namespace Refractored.MvxPlugins.Settings.Droid
                         break;
                     case TypeCode.Single:
                         SharedPreferencesEditor.PutFloat(key, Convert.ToSingle(value));
+                        break;
+                    case TypeCode.DateTime:
+                        SharedPreferencesEditor.PutLong(key, ((DateTime)(object)value).Ticks);
                         break;
                 }
             }

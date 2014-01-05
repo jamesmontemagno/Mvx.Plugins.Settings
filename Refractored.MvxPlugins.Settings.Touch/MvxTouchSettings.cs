@@ -58,6 +58,9 @@ namespace Refractored.MvxPlugins.Settings.Touch
                         value = defaults.BoolForKey(key);
                         break;
                     case TypeCode.Int64:
+                        var savedval = defaults.StringForKey(key);
+                        value = Convert.ToInt64(savedval);
+                        break;
                     case TypeCode.Double:
                         value = defaults.DoubleForKey(key);
                         break;
@@ -69,6 +72,15 @@ namespace Refractored.MvxPlugins.Settings.Touch
                         break;
                     case TypeCode.Single:
                         value = defaults.FloatForKey(key);
+                        break;
+
+                    case TypeCode.DateTime:
+                        var savedTime = defaults.StringForKey(key);
+                        var ticks = string.IsNullOrWhiteSpace(savedTime) ? -1 : Convert.ToInt64(savedTime);
+                        if (ticks == -1)
+                            value = defaultValue;
+                        else
+                            value = new DateTime(ticks);
                         break;
                 }
           
@@ -100,6 +112,8 @@ namespace Refractored.MvxPlugins.Settings.Touch
                         defaults.SetBool(Convert.ToBoolean(value), key);
                         break;
                     case TypeCode.Int64:
+                        defaults.SetString(Convert.ToString(value), key);
+                        break;
                     case TypeCode.Double:
                         defaults.SetDouble(Convert.ToDouble(value), key);
                         break;
@@ -111,6 +125,9 @@ namespace Refractored.MvxPlugins.Settings.Touch
                         break;
                     case TypeCode.Single:
                         defaults.SetFloat(Convert.ToSingle(value), key);
+                        break;
+                    case TypeCode.DateTime:
+                        defaults.SetString(Convert.ToString(((DateTime)(object)value).Ticks), key);
                         break;
                 }
             }

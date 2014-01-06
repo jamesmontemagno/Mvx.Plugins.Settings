@@ -132,7 +132,7 @@ namespace Refractored.MvxPlugins.Settings.Touch
                 }
             }
 
-            return false;
+            return true;
         }
 
         /// <summary>

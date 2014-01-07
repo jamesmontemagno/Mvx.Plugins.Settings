@@ -37,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DocumentationFile>bin\Release\Refractored.MvxPlugins.Settings.Droid.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">

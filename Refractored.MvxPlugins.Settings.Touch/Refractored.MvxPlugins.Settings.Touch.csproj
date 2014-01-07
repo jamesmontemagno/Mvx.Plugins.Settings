@@ -35,6 +35,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <AssemblyName>Refractored.MvxPlugins.Settings.Touch</AssemblyName>
+    <DocumentationFile>bin\Release\Refractored.MvxPlugins.Settings.Touch.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MvxTouchSettings.cs" />

@@ -14,6 +14,9 @@ Uses the native settings management
 * Included currently is a iOS Touch sample app and a core solution under the "Test" folder.
 
 #Setup & Usage
+* Now available on NuGet: https://www.nuget.org/packages/Mvx.Plugins.Settings/
+
+Manually (Dlls are all in Binaries folder):
 * Add Refractored.MvxPlugins.Settings.dll to all projects
 * Add Refractored.MvxPlugins.Settings.ClientName.dll to all clients 
 * Or go ahead and just all all projects in and reference them
@@ -31,7 +34,6 @@ Uses the native settings management
 
 
 ## TODO
-* Turn into Nuget
 * Sample Android App
 * Sample Windows Phone App
 * Sample Windows Store App

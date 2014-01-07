@@ -18,8 +18,8 @@
    </metadata>
    <files>
 <!--Core-->
-     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.dll" target="lib\portable-wp8+win8+monoandroid+monotouch\PCLStorage.dll" />
-     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.xml" target="lib\portable-wp8+win8+monoandroid+monotouch\PCLStorage.xml" />
+     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.dll" target="lib\portable-wp8+win8+monoandroid+monotouch\Refractored.MvxPlugins.Settings.dll" />
+     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.xml" target="lib\portable-wp8+win8+monoandroid+monotouch\Refractored.MvxPlugins.Settings.xml" />
      <file src="core\Settings.cs.pp" target="content\portable-wp8+win8+monoandroid+monotouch\Helpers\Settings.cs.pp" />
 
 <!--Win Phone-->

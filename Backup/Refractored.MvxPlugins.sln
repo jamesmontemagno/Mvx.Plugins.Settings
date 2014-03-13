@@ -1,17 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4900279E-8A47-4E5D-B8F0-A6DD8773F351}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0D966643-ECCD-4288-B562-4E0FA8B24390}"
-EndProject
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings", "Refractored.MvxPlugins.Settings\Refractored.MvxPlugins.Settings.csproj", "{747706F4-ECBF-4D50-8D72-B0DDCC18395C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Droid", "Refractored.MvxPlugins.Settings.Droid\Refractored.MvxPlugins.Settings.Droid.csproj", "{91B25A78-62C8-41AA-8D22-DA326A5EA64D}"
@@ -21,6 +10,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Touch", "Refractored.MvxPlugins.Settings.Touch\Refractored.MvxPlugins.Settings.Touch.csproj", "{C598E2C2-E094-42B7-A8D7-BE83E1C72C86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.WindowsStore", "Refractored.MvxPlugins.Settings.WindowsStore\Refractored.MvxPlugins.Settings.WindowsStore.csproj", "{489617CC-3D48-4189-BAAE-06D08384F965}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4900279E-8A47-4E5D-B8F0-A6DD8773F351}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0D966643-ECCD-4288-B562-4E0FA8B24390}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Test.Touch", "Refractored.MvxPlugins.Settings.Test.Touch\Refractored.MvxPlugins.Settings.Test.Touch.csproj", "{7B500905-DBAC-446D-BEEF-4D649544D43D}"
 EndProject

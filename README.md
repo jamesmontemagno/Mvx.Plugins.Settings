@@ -33,6 +33,19 @@ Manually (Dlls are all in Binaries folder):
 
 
 
+## Building with rake
+*Install Ruby
+*Cd to solution directory root with cygwin (git bash will work fine)
+* run the following commands
+```
+gem install rake
+gem install bundle
+bundle
+```
+Now type rake -T this will show you the rake tasks available.
+Rake preflight downloads nugetpackages and builds (most common to use) 
+
+
 ## TODO
 * Sample Android App
 * Sample Windows Phone App

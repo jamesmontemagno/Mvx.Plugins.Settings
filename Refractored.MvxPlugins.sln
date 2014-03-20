@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Sett
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Droid", "Refractored.MvxPlugins.Settings.Droid\Refractored.MvxPlugins.Settings.Droid.csproj", "{91B25A78-62C8-41AA-8D22-DA326A5EA64D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.WindowsPhone", "Refractored.MvxPlugins.Settings.WindowsPhone\Refractored.MvxPlugins.Settings.WindowsPhone.csproj", "{DFC49539-6A6E-4AD5-AE04-500D65B30F20}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Touch", "Refractored.MvxPlugins.Settings.Touch\Refractored.MvxPlugins.Settings.Touch.csproj", "{C598E2C2-E094-42B7-A8D7-BE83E1C72C86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.WindowsStore", "Refractored.MvxPlugins.Settings.WindowsStore\Refractored.MvxPlugins.Settings.WindowsStore.csproj", "{489617CC-3D48-4189-BAAE-06D08384F965}"

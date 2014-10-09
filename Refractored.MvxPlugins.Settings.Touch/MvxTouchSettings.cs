@@ -129,6 +129,8 @@ namespace Refractored.MvxPlugins.Settings.Touch
                     case TypeCode.DateTime:
                         defaults.SetString(Convert.ToString(((DateTime)(object)value).Ticks), key);
                         break;
+                    default:
+                        throw new ArgumentException(string.Format("Value of type {0} is not supported.", value.GetType().Name));
                 }
             }
 

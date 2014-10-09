@@ -123,6 +123,8 @@ namespace Refractored.MvxPlugins.Settings.Droid
                     case TypeCode.DateTime:
                         SharedPreferencesEditor.PutLong(key, ((DateTime)(object)value).Ticks);
                         break;
+                    default:
+                        throw new ArgumentException(string.Format("Value of type {0} is not supported.", value.GetType().Name));
                 }
             }
 

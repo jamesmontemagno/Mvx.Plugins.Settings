@@ -19,7 +19,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Settings Plugin Test</string>
 	<key>CFBundleIdentifier</key>
-	<string>ceton.mvx.plugins.tests</string>
+	<string>refractored.mvx.plugins.tests</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSMainNibFile~ipad</key>

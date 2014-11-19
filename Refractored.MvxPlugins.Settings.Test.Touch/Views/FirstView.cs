@@ -23,6 +23,10 @@ namespace Refractored.MvxPlugins.Settings.Test.Touch.Views
             set.Bind(label).To(vm => vm.Hello);
             set.Bind(textField).To(vm => vm.Hello3);
             set.Apply();
+
+            Test.Core.TestStuff.Test();
+
+            textField.TextColor = UIColor.Green;
         }
     }
 }

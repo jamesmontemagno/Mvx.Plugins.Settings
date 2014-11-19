@@ -92,7 +92,7 @@
     <AssemblyName>RefractoredMvxPluginsSettingsTestTouch</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Boostrap\SettingsBootstrap.cs" />
+    <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
@@ -109,14 +109,6 @@
     <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Refractored.MvxPlugins.Settings.Touch\Refractored.MvxPlugins.Settings.Touch.csproj">
-      <Project>{C598E2C2-E094-42B7-A8D7-BE83E1C72C86}</Project>
-      <Name>Refractored.MvxPlugins.Settings.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Refractored.MvxPlugins.Settings\Refractored.MvxPlugins.Settings.csproj">
-      <Project>{747706F4-ECBF-4D50-8D72-B0DDCC18395C}</Project>
-      <Name>Refractored.MvxPlugins.Settings</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Refractored.MvxPlugins.Settings.Test.Core\Refractored.MvxPlugins.Settings.Test.Core.csproj">
       <Project>{EC4D7E89-74D3-4D15-85FE-5EC0CB647964}</Project>
       <Name>Refractored.MvxPlugins.Settings.Test.Core</Name>
@@ -124,25 +116,31 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.CrossCore.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\MonoTouch\Cirrious.CrossCore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore.Touch">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.CrossCore.Touch.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\MonoTouch\Cirrious.CrossCore.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Binding.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Binding.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding.Touch">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Touch">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Touch.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.MvxPlugins.Settings">
+      <HintPath>..\packages\Mvx.Plugins.Settings.1.4.0.1\lib\monotouch\Refractored.MvxPlugins.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.MvxPlugins.Settings.Touch">
+      <HintPath>..\packages\Mvx.Plugins.Settings.1.4.0.1\lib\monotouch\Refractored.MvxPlugins.Settings.Touch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -151,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppDelegate.cs.txt" />
+    <Content Include="Properties\_SettingsStarted.txt" />
     <Content Include="ToDo-MvvmCross\_ Touch UI.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

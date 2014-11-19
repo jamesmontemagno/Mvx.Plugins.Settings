@@ -11,6 +11,8 @@ namespace Refractored.MvxPlugins.Settings.Test.Droid.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.FirstView);
+
+            Test.Core.TestStuff.Test();
         }
     }
 }

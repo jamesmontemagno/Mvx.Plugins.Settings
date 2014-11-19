@@ -1,7 +1,13 @@
-﻿using System.Collections.Generic;
-using Cirrious.CrossCore;
+Ensure that you install NuGet into PCL and see Helpers/Settings.cs
 
-namespace Refractored.MvxPlugins.Settings.Test.Core
+If you are installing this in a normal project and not using a pcl create a new file called Settings.cs or whatever you want and copy this code in:
+
+
+// Helpers/Settings.cs
+using Cirrious.CrossCore;
+using Refractored.MvxPlugins.Settings;
+
+namespace Refractored.MvxPlugins.Settings.Test.Droid.Helpers
 {
     /// <summary>
     /// This is the Settings static class that can be used in your Core solution or in any
@@ -18,37 +24,29 @@ namespace Refractored.MvxPlugins.Settings.Test.Core
         {
             get
             {
-                return m_Settings ?? (m_Settings = m_Settings = Mvx.GetSingleton<ISettings>());
+                return m_Settings ?? (m_Settings = Mvx.GetSingleton<ISettings>());
             }
         }
 
 #region Setting Constants
 
-        /// <summary>
-        /// Key for your setting
-        /// </summary>
-        public const string TimeoutKey = "timeout";
-        /// <summary>
-        /// default value for your setting
-        /// </summary>
-        public const int TimeoutDefault = 8;
+		private const string SettingsKey = "settings_key";
+		private static string SettingsDefault = string.Empty;
 
 #endregion
 
-        /// <summary>
-        /// Timeout setting example. Gets or sets the timeout int
-        /// </summary>
-        public static int Timeout
+ 
+	public static string GeneralSettings
         {
             get
             {
-                return AppSettings.GetValueOrDefault(TimeoutKey, TimeoutDefault);
+		return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
             }
             set
             {
                 //if value has changed then save it!
-                if (AppSettings.AddOrUpdateValue(TimeoutKey, value))
-                    AppSettings.Save();
+				AppSettings.AddOrUpdateValue(SettingsKey, value);
+
             }
         }
 

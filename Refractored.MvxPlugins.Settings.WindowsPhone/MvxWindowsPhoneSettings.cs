@@ -67,18 +67,23 @@ namespace Refractored.MvxPlugins.Settings.WindowsPhone
                 }
             }
 
+            if (valueChanged)
+            {
+              lock (m_Locker)
+              {
+                Settings.Save();
+              }
+            }
+
             return valueChanged;
         }
 
         /// <summary>
         /// Saves any changes out.
         /// </summary>
+        [Obsolete("Save is deprecated and settings are automatically saved when AddOrUpdateValue is called.")]
         public void Save()
         {
-            lock (m_Locker)
-            {
-                Settings.Save();
-            }
         }
 
     }

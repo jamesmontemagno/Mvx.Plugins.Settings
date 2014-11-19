@@ -49,5 +49,17 @@ namespace Refractored.MvxPlugins.Settings.Test.Droid
         {
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
+		
+		public void Include(Cirrious.CrossCore.IoC.MvxPropertyInjector injector)
+		{
+			injector = new Cirrious.CrossCore.IoC.MvxPropertyInjector ();
+		} 
+
+		public void Include(System.ComponentModel.INotifyPropertyChanged changed)
+		{
+			changed.PropertyChanged += (sender, e) =>  {
+				var test = e.PropertyName;
+			};
+		}
     }
 }

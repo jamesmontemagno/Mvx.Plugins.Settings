@@ -26,82 +26,130 @@ namespace Refractored.MvxPlugins.Settings.WindowsStore
 {
     public class MvxWindowsStoreSettings : ISettings
     {
-        private static ApplicationDataContainer Settings
-        {
-            get { return ApplicationData.Current.LocalSettings; }
-        }
+      private static ApplicationDataContainer AppSettings
+      {
+        get { return ApplicationData.Current.LocalSettings; }
+      }
 
-        private readonly object m_Locker = new object();
+      private readonly object m_Locker = new object();
 
-        /// <summary>
-        /// Gets the current value or the default that you specify.
-        /// </summary>
-        /// <typeparam name="T">Vaue of t (bool, int, float, long, string)</typeparam>
-        /// <param name="key">Key for settings</param>
-        /// <param name="defaultValue">default value if not set</param>
-        /// <returns>Value or default</returns>
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
+      /// <summary>
+      /// Gets the current value or the default that you specify.
+      /// </summary>
+      /// <typeparam name="T">Vaue of t (bool, int, float, long, string)</typeparam>
+      /// <param name="key">Key for settings</param>
+      /// <param name="defaultValue">default value if not set</param>
+      /// <returns>Value or default</returns>
+      public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
+      {
+        object value;
+        lock (m_Locker)
         {
-            T value;
-            lock (m_Locker)
+          if (typeof(T) == typeof(decimal))
+          {
+            string savedDecimal;
+            // If the key exists, retrieve the value.
+            if (AppSettings.Values.ContainsKey(key))
             {
-                // If the key exists, retrieve the value.
-                if (Settings.Values.ContainsKey(key))
-                {
-                    value = (T) Settings.Values[key];
-                }
-                    // Otherwise, use the default value.
-                else
-                {
-                    value = defaultValue;
-                }
+              savedDecimal = (string)AppSettings.Values[key];
+            }
+            // Otherwise, use the default value.
+            else
+            {
+              savedDecimal = defaultValue.ToString();
             }
 
-            return value;
-        }
+            value = Convert.ToDecimal(savedDecimal, System.Globalization.CultureInfo.InvariantCulture);
 
-        /// <summary>
-        /// Adds or updates the value 
-        /// </summary>
-        /// <param name="key">Key for settting</param>
-        /// <param name="value">Value to set</param>
-        /// <returns>True of was added or updated and you need to save it.</returns>
-        public bool AddOrUpdateValue(string key, object value)
-        {
-            bool valueChanged = false;
-            lock (m_Locker)
+            return null != value ? (T)value : defaultValue;
+          }
+          else if (typeof(T) == typeof(DateTime))
+          {
+            string savedTime = null;
+            // If the key exists, retrieve the value.
+            if (AppSettings.Values.ContainsKey(key))
             {
-                // If the key exists
-                if (Settings.Values.ContainsKey(key))
-                {
-
-                    // If the value has changed
-                    if (Settings.Values[key] != value)
-                    {
-                        // Store key new value
-                        Settings.Values[key] = value;
-                        valueChanged = true;
-                    }
-                }
-                    // Otherwise create the key.
-                else
-                {
-                    Settings.CreateContainer(key, ApplicationDataCreateDisposition.Always);
-                    Settings.Values[key] = value;
-                    valueChanged = true;
-                }
+              savedTime = (string)AppSettings.Values[key];
             }
 
-            return valueChanged;
+            var ticks = string.IsNullOrWhiteSpace(savedTime) ? -1 : Convert.ToInt64(savedTime, System.Globalization.CultureInfo.InvariantCulture);
+            if (ticks == -1)
+              value = defaultValue;
+            else
+              value = new DateTime(ticks);
+
+            return null != value ? (T)value : defaultValue;
+          }
+
+          // If the key exists, retrieve the value.
+          if (AppSettings.Values.ContainsKey(key))
+          {
+            value = (T)AppSettings.Values[key];
+          }
+          // Otherwise, use the default value.
+          else
+          {
+            value = defaultValue;
+          }
         }
 
-        /// <summary>
-        /// Saves any changes out.
-        /// </summary>
-        public void Save()
+        return null != value ? (T)value : defaultValue;
+      }
+
+      /// <summary>
+      /// Adds or updates the value 
+      /// </summary>
+      /// <param name="key">Key for settting</param>
+      /// <param name="value">Value to set</param>
+      /// <returns>True of was added or updated and you need to save it.</returns>
+      public bool AddOrUpdateValue(string key, object value)
+      {
+        bool valueChanged = false;
+        lock (m_Locker)
         {
-            //nothing to do it is automatic
+
+          if (value is decimal)
+          {
+            return AddOrUpdateValue(key, Convert.ToString((decimal)value, System.Globalization.CultureInfo.InvariantCulture));
+          }
+          else if (value is DateTime)
+          {
+            return AddOrUpdateValue(key, Convert.ToString(((DateTime)value).Ticks, System.Globalization.CultureInfo.InvariantCulture));
+          }
+
+
+          // If the key exists
+          if (AppSettings.Values.ContainsKey(key))
+          {
+
+            // If the value has changed
+            if (AppSettings.Values[key] != value)
+            {
+              // Store key new value
+              AppSettings.Values[key] = value;
+              valueChanged = true;
+            }
+          }
+          // Otherwise create the key.
+          else
+          {
+            AppSettings.CreateContainer(key, ApplicationDataCreateDisposition.Always);
+            AppSettings.Values[key] = value;
+            valueChanged = true;
+          }
         }
+
+        return valueChanged;
+      }
+
+      /// <summary>
+      /// Saves any changes out.
+      /// </summary>
+      [Obsolete("Save is deprecated and settings are automatically saved when AddOrUpdateValue is called.")]
+      public void Save()
+      {
+        //nothing to do it is automatic
+      }
 
     }
 }

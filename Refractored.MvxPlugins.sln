@@ -42,6 +42,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Sett
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.Test.Droid", "Refractored.MvxPlugins.Settings.Test.Droid\Refractored.MvxPlugins.Settings.Test.Droid.csproj", "{B88C5F08-B5E6-4020-BCCA-86A3AB11549A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{79FACD3C-28D4-4287-A2E4-A2009D32C738}"
+	ProjectSection(SolutionItems) = preProject
+		Common\core\_SettingsStarted.txt.pp = Common\core\_SettingsStarted.txt.pp
+		Common\MvxPluginsSettings.nuspec = Common\MvxPluginsSettings.nuspec
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		Common\core\Settings.cs.pp = Common\core\Settings.cs.pp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

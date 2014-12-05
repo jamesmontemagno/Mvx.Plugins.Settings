@@ -151,6 +151,12 @@
       <HintPath>..\packages\Mvx.Plugins.Settings.1.4.0.1\lib\wpa81\Refractored.MvxPlugins.Settings.WindowsPhoneRT.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Refractored.MvxPlugins.Settings.Test.Core\Refractored.MvxPlugins.Settings.Test.Core.csproj">
+      <Project>{ec4d7e89-74d3-4d15-85fe-5ec0cb647964}</Project>
+      <Name>Refractored.MvxPlugins.Settings.Test.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.7.2">
        <id>Mvx.Plugins.Settings</id>
-       <version>1.4.0.1</version>
+       <version>1.4.0.2</version>
        <title>MvvmCross - Settings Plugin</title>
        <authors>James Montemagno</authors>
        <owners>James Montemagno</owners>
@@ -16,7 +16,8 @@
          Support for: Int, Int64, Double, String, DateTime, Bool, Float, Decimal, Guid
 
          You can always serialize and deserialize a string out if needed.
-
+         Release notes:
+         1.4.0.2- Fix WP 8.1 RT to support ARM
          1.4.0.1- Add iOS Unified (64 bit), Fix Doubles on Android.
          1.3.0.0- Add Windows Phone 8.1 Support with new PCL profile
        </description>

@@ -149,19 +149,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.CrossCore.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\win81\Cirrious.CrossCore.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore.WindowsCommon">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.CrossCore.WindowsCommon.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\win81\Cirrious.CrossCore.WindowsCommon.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\win81\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.0\lib\win81\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.MvvmCross.Localization.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\win81\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.WindowsCommon">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\win81\Cirrious.MvvmCross.WindowsCommon.dll</HintPath>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.0\lib\win81\Cirrious.MvvmCross.WindowsCommon.dll</HintPath>
     </Reference>
     <Reference Include="Refractored.MvxPlugins.Settings">
       <HintPath>..\packages\Mvx.Plugins.Settings.1.4.0.1\lib\win8\Refractored.MvxPlugins.Settings.dll</HintPath>

@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using System.Windows.Input;
+using Android.App;
 using Android.Views;
 using Android.Widget;
 
@@ -18,6 +19,11 @@ namespace Refractored.MvxPlugins.Settings.Test.Droid
         {
             checkBox.CheckedChange += (sender, args) => checkBox.Checked = !checkBox.Checked;
         }
+        
+        public void Include(Switch @switch)
+        {
+            @switch.CheckedChange += (sender, args) => @switch.Checked = !@switch.Checked;
+        }
 
         public void Include(View view)
         {
@@ -29,6 +35,12 @@ namespace Refractored.MvxPlugins.Settings.Test.Droid
             text.TextChanged += (sender, args) => text.Text = "" + text.Text;
 			text.Hint = "" + text.Hint;
         }
+        
+        public void Include(CheckedTextView text)
+        {
+            text.TextChanged += (sender, args) => text.Text = "" + text.Text;
+            text.Hint = "" + text.Hint;
+        }
 
         public void Include(CompoundButton cb)
         {
@@ -38,6 +50,11 @@ namespace Refractored.MvxPlugins.Settings.Test.Droid
         public void Include(SeekBar sb)
         {
             sb.ProgressChanged += (sender, args) => sb.Progress = sb.Progress + 1;
+        }
+
+        public void Include(Activity act)
+        {
+            act.Title = act.Title + "";
         }
 
         public void Include(INotifyCollectionChanged changed)

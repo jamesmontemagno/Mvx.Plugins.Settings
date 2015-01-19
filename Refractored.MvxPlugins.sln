@@ -48,7 +48,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{79FACD3C-2
 		Common\MvxPluginsSettings.nuspec = Common\MvxPluginsSettings.nuspec
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		Common\core\Settings.cs.pp = Common\core\Settings.cs.pp
+		Common\monotouch\SettingsPluginBootstrap.cs.pp = Common\monotouch\SettingsPluginBootstrap.cs.pp
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Refractored.MvxPlugins.Settings.TouchUnified", "Refractored.MvxPlugins.Settings.TouchUnified\Refractored.MvxPlugins.Settings.TouchUnified.csproj", "{3480B92F-EF78-459E-A6CB-F24163EEB997}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -621,6 +624,42 @@ Global
 		{B88C5F08-B5E6-4020-BCCA-86A3AB11549A}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
 		{B88C5F08-B5E6-4020-BCCA-86A3AB11549A}.Release|x64.ActiveCfg = Release|Any CPU
 		{B88C5F08-B5E6-4020-BCCA-86A3AB11549A}.Release|x86.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|x64.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Ad-Hoc|x86.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|Any CPU.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|ARM.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|x64.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.AppStore|x86.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|x64.ActiveCfg = Release|Any CPU
+		{3480B92F-EF78-459E-A6CB-F24163EEB997}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

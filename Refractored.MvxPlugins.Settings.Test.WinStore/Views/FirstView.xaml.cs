@@ -7,7 +7,6 @@ namespace Refractored.MvxPlugins.Settings.Test.WinStore.Views
         public FirstView()
         {
             this.InitializeComponent();
-            Test.Core.TestStuff.Test();
         }
     }
 }

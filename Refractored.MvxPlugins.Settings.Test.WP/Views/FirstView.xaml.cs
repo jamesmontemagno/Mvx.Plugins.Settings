@@ -7,7 +7,6 @@ namespace Refractored.MvxPlugins.Settings.Test.WP.Views
         public FirstView()
         {
             InitializeComponent();
-            Test.Core.TestStuff.Test();
         }
     }
 }

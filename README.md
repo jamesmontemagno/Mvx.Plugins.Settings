@@ -4,6 +4,8 @@ Mvx Settings Plugin an MvvmCross
 ## What is it
 Cross platform settings plug-in for MvvmCross that allows you to store and use shared preferences in your core project.
 
+I would recommend that you use my new generic settings plugin for Xamarin and Windows that will be updated more frequently: https://www.nuget.org/packages/Xam.Plugins.Settings/
+
 Uses the native settings management
 * Android: SharedPreferences
 * iOS: NSUserDefaults

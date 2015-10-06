@@ -78,8 +78,8 @@
      <!--Xamarin.iOSUnified-->
      <file src="..\Refractored.MvxPlugins.Settings.TouchUnified\bin\iPhone\Release\Refractored.MvxPlugins.Settings.TouchUnified.dll" target="lib\Xamarin.iOS10\Refractored.MvxPlugins.Settings.TouchUnified.dll" />
      <file src="..\Refractored.MvxPlugins.Settings.TouchUnified\bin\iPhone\Release\Refractored.MvxPlugins.Settings.TouchUnified.xml" target="lib\Xamarin.iOS10\Refractored.MvxPlugins.Settings.TouchUnified.xml" />
-     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.dll" target="lib\monotouch\Refractored.MvxPlugins.Settings.dll" />
-     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.xml" target="lib\monotouch\Refractored.MvxPlugins.Settings.xml" />
+     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.dll" target="lib\Xamarin.iOS10\Refractored.MvxPlugins.Settings.dll" />
+     <file src="..\Refractored.MvxPlugins.Settings\bin\Release\Refractored.MvxPlugins.Settings.xml" target="lib\Xamarin.iOS10\Refractored.MvxPlugins.Settings.xml" />
      <file src="monotouch\SettingsPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\SettingsPluginBootstrap.cs.pp" />
      <file src="core\_SettingsStarted.txt.pp" target="content\Xamarin.iOS10\Properties\_SettingsStarted.txt.pp" />
 
